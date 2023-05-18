@@ -10,9 +10,14 @@ import sys
 import discord
 
 
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
+
 CONFIG = configparser.ConfigParser()
-BOT = discord.Client()
-LOG_CHANNEL = ""
+BOT = discord.Client(intents=intents)
+LOG_CHANNEL = "log_channel"
+
 
 
 @BOT.event
